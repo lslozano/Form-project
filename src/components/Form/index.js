@@ -35,6 +35,6 @@ const Form = () => {
       <Button />
     </form>
   )
-}
+};
 
 export default Form;

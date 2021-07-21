@@ -10,6 +10,6 @@ const Select = () => {
       </select>
     </div>
   )
-}
+};
 
 export default Select;

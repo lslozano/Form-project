@@ -13,6 +13,6 @@ const InputField = ({ label, type, name, value }) => {
       <input className="input" type={type} name={name} value={value} />
     </div>
   )
-}
+};
 
 export default InputField;
