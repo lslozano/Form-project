@@ -3,11 +3,14 @@ import React from 'react'
 import HeaderRight from './HeaderRight';
 import BodyRight from './BodyRight';
 
-const RightSide = () => {
+const RightSide = ({ startingCountry, destinationCountry, quotePrice }) => {
   return (
     <div className="right-side">
-      <HeaderRight />
-      <BodyRight />
+      <HeaderRight 
+        startingCountry={startingCountry}
+        destinationCountry={destinationCountry}
+      />
+      <BodyRight quotePrice={quotePrice} />
     </div>
   )
 };

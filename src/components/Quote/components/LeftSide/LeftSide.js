@@ -3,10 +3,10 @@ import React from 'react'
 import HeaderLeft from './HeaderLeft'
 import BodyLeft from './BodyLeft';
 
-const LeftSide = () => {
+const LeftSide = ({ shippingChannel }) => {
   return (
     <div className="left-side">
-      <HeaderLeft />
+      <HeaderLeft shippingChannel={shippingChannel} />
       <BodyLeft />
     </div>
   )

@@ -22,6 +22,8 @@ const App = () => {
 
   const [formHasBeenSubmitted, setFormHasBeenSubitted] = useState(false);
 
+  console.log('data', startingCountry);
+
   return (
     <div className="App">
       <header className="App-header">
