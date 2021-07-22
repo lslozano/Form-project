@@ -5,7 +5,7 @@ import Input from './components/Input';
 import Select from './components/Select';
 import Button from './components/Button';
 
-const Form = () => {
+const Form = ({ setQuoteData, setFormHasBeenSubitted }) => {
   const [startingCountry, setStartingCountry] = useState('');
   const [destinationCountry, setDestinationCountry] = useState('');
   const [quotePrice, setQuotePrice] = useState('');
@@ -22,10 +22,14 @@ const Form = () => {
       quotePrice !== '' &&
       shippingChannel !== ''
     ) {
-      console.log('Start:', startingCountry);
-      console.log('Destiny:', destinationCountry);
-      console.log('Quote:', quotePrice);
-      console.log('Shipping:', shippingChannel);
+      setQuoteData({
+        startingCountry,
+        destinationCountry,
+        quotePrice,    
+        shippingChannel,
+      });
+
+      setFormHasBeenSubitted(true);
     } else {
       setButtonText('Fill form');
       setIsButtonDisabled(true);
@@ -63,6 +67,7 @@ const Form = () => {
       />
       <Select 
         className="select"
+        name="shippingChannel"
         setSelectValue={setShippingChannel}
         value={shippingChannel}
       />
