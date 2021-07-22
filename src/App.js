@@ -13,6 +13,13 @@ const App = () => {
     shippingChannel: 'Ocean',
   });
 
+  const {
+    startingCountry,
+    destinationCountry,
+    quotePrice,
+    shippingChannel,
+  } = quoteData;
+
   const [formHasBeenSubmitted, setFormHasBeenSubitted] = useState(false);
 
   return (
@@ -20,7 +27,12 @@ const App = () => {
       <header className="App-header">
         <Form setQuoteData={setQuoteData} setFormHasBeenSubitted={setFormHasBeenSubitted} />
         {formHasBeenSubmitted &&
-          <Quote />
+          <Quote 
+            startingCountry={startingCountry}
+            destinationCountry={destinationCountry}
+            quotePrice={quotePrice}
+            shippingChannel={shippingChannel}
+          />
         }
       </header>
     </div>
