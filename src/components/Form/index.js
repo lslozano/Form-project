@@ -11,12 +11,29 @@ const Form = () => {
   const [quotePrice, setQuotePrice] = useState('');
   const [shippingChannel, setShippingChannel] = useState('Ocean');
 
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const [buttonText, setButtonText] = useState('Create quote');
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Start:', startingCountry);
-    console.log('Destiny:', destinationCountry);
-    console.log('Quote:', quotePrice);
-    console.log('Shipping:', shippingChannel);
+    if (
+      startingCountry !== '' &&
+      destinationCountry !== '' &&
+      quotePrice !== '' &&
+      shippingChannel !== ''
+    ) {
+      console.log('Start:', startingCountry);
+      console.log('Destiny:', destinationCountry);
+      console.log('Quote:', quotePrice);
+      console.log('Shipping:', shippingChannel);
+    } else {
+      setButtonText('Fill form');
+      setIsButtonDisabled(true);
+      setTimeout(() => {        
+        setButtonText('Create quote');
+        setIsButtonDisabled(false);
+      }, 1000);
+    }
   }
 
   return (
@@ -49,7 +66,10 @@ const Form = () => {
         setSelectValue={setShippingChannel}
         value={shippingChannel}
       />
-      <Button />
+      <Button 
+        text={buttonText}
+        isDisabled={isButtonDisabled}
+      />
     </form>
   )
 };
