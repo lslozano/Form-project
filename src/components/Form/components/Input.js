@@ -27,7 +27,7 @@ const InputField = ({ label, type, name, setInputValue, value }) => {
       } else {
         setInputValue(value);
       }
-    } else {
+    } else if (label === 'quotePrice'){
       setInputValue(value);
     }
   };

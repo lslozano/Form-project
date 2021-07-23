@@ -7,7 +7,7 @@ const LeftSide = ({ shippingChannel }) => {
   return (
     <div className="left-side">
       <HeaderLeft shippingChannel={shippingChannel} />
-      <BodyLeft />
+      <BodyLeft shippingChannel={shippingChannel} />
     </div>
   )
 };
