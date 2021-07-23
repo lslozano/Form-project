@@ -86,3 +86,20 @@
   margin: 10px 20px 0;
   width: 280px;
 }
+
+@media screen and (min-width: 600px) {
+  .quote {
+    width: 550px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .left-side {
+    width: 30%;
+  }
+
+  .quote {
+    flex-direction: row;
+    width: 97%;
+  }
+}
